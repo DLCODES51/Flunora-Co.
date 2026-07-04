@@ -1,0 +1,25 @@
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
+import * as schema from "./schema";
+
+let client: ReturnType<typeof postgres> | null = null;
+let db: ReturnType<typeof drizzle<typeof schema>> | null = null;
+
+export function getDb() {
+  const url = process.env.DATABASE_URL;
+  if (!url) {
+    throw new Error("DATABASE_URL is not configured");
+  }
+  if (!db || !client) {
+    client = postgres(url, {
+      prepare: false,
+      max: 5,
+      idle_timeout: 20,
+      connect_timeout: 5,
+    });
+    db = drizzle(client, { schema });
+  }
+  return db;
+}
+
+export { schema };
