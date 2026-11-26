@@ -10,29 +10,24 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as AdminDashboardRouteRouteImport } from './routes/admin/_dashboard/route'
+import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as AdminDashboardIndexRouteImport } from './routes/admin/_dashboard/index'
-import { Route as AdminDashboardSettingsIndexRouteImport } from './routes/admin/_dashboard/settings/index'
-import { Route as AdminDashboardProductsIndexRouteImport } from './routes/admin/_dashboard/products/index'
-import { Route as AdminDashboardNewsletterIndexRouteImport } from './routes/admin/_dashboard/newsletter/index'
-import { Route as AdminDashboardMessagesIndexRouteImport } from './routes/admin/_dashboard/messages/index'
-import { Route as AdminDashboardMediaIndexRouteImport } from './routes/admin/_dashboard/media/index'
-import { Route as AdminDashboardGalleryIndexRouteImport } from './routes/admin/_dashboard/gallery/index'
-import { Route as AdminDashboardContentIndexRouteImport } from './routes/admin/_dashboard/content/index'
-import { Route as AdminDashboardCollectionsIndexRouteImport } from './routes/admin/_dashboard/collections/index'
 import { Route as AdminDashboardAnalyticsIndexRouteImport } from './routes/admin/_dashboard/analytics/index'
-import { Route as AdminDashboardProductsNewRouteImport } from './routes/admin/_dashboard/products/new'
+import { Route as AdminDashboardCollectionsIndexRouteImport } from './routes/admin/_dashboard/collections/index'
+import { Route as AdminDashboardContentIndexRouteImport } from './routes/admin/_dashboard/content/index'
+import { Route as AdminDashboardGalleryIndexRouteImport } from './routes/admin/_dashboard/gallery/index'
+import { Route as AdminDashboardMediaIndexRouteImport } from './routes/admin/_dashboard/media/index'
+import { Route as AdminDashboardMessagesIndexRouteImport } from './routes/admin/_dashboard/messages/index'
+import { Route as AdminDashboardNewsletterIndexRouteImport } from './routes/admin/_dashboard/newsletter/index'
+import { Route as AdminDashboardProductsIndexRouteImport } from './routes/admin/_dashboard/products/index'
 import { Route as AdminDashboardProductsProductIdRouteImport } from './routes/admin/_dashboard/products/$productId'
+import { Route as AdminDashboardProductsNewRouteImport } from './routes/admin/_dashboard/products/new'
+import { Route as AdminDashboardSettingsIndexRouteImport } from './routes/admin/_dashboard/settings/index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AdminLoginRoute = AdminLoginRouteImport.update({
-  id: '/admin/login',
-  path: '/admin/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminDashboardRouteRoute = AdminDashboardRouteRouteImport.update({
@@ -40,51 +35,20 @@ const AdminDashboardRouteRoute = AdminDashboardRouteRouteImport.update({
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminLoginRoute = AdminLoginRouteImport.update({
+  id: '/admin/login',
+  path: '/admin/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminDashboardIndexRoute = AdminDashboardIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => AdminDashboardRouteRoute,
 } as any)
-const AdminDashboardSettingsIndexRoute =
-  AdminDashboardSettingsIndexRouteImport.update({
-    id: '/settings/',
-    path: '/settings/',
-    getParentRoute: () => AdminDashboardRouteRoute,
-  } as any)
-const AdminDashboardProductsIndexRoute =
-  AdminDashboardProductsIndexRouteImport.update({
-    id: '/products/',
-    path: '/products/',
-    getParentRoute: () => AdminDashboardRouteRoute,
-  } as any)
-const AdminDashboardNewsletterIndexRoute =
-  AdminDashboardNewsletterIndexRouteImport.update({
-    id: '/newsletter/',
-    path: '/newsletter/',
-    getParentRoute: () => AdminDashboardRouteRoute,
-  } as any)
-const AdminDashboardMessagesIndexRoute =
-  AdminDashboardMessagesIndexRouteImport.update({
-    id: '/messages/',
-    path: '/messages/',
-    getParentRoute: () => AdminDashboardRouteRoute,
-  } as any)
-const AdminDashboardMediaIndexRoute =
-  AdminDashboardMediaIndexRouteImport.update({
-    id: '/media/',
-    path: '/media/',
-    getParentRoute: () => AdminDashboardRouteRoute,
-  } as any)
-const AdminDashboardGalleryIndexRoute =
-  AdminDashboardGalleryIndexRouteImport.update({
-    id: '/gallery/',
-    path: '/gallery/',
-    getParentRoute: () => AdminDashboardRouteRoute,
-  } as any)
-const AdminDashboardContentIndexRoute =
-  AdminDashboardContentIndexRouteImport.update({
-    id: '/content/',
-    path: '/content/',
+const AdminDashboardAnalyticsIndexRoute =
+  AdminDashboardAnalyticsIndexRouteImport.update({
+    id: '/analytics/',
+    path: '/analytics/',
     getParentRoute: () => AdminDashboardRouteRoute,
   } as any)
 const AdminDashboardCollectionsIndexRoute =
@@ -93,10 +57,46 @@ const AdminDashboardCollectionsIndexRoute =
     path: '/collections/',
     getParentRoute: () => AdminDashboardRouteRoute,
   } as any)
-const AdminDashboardAnalyticsIndexRoute =
-  AdminDashboardAnalyticsIndexRouteImport.update({
-    id: '/analytics/',
-    path: '/analytics/',
+const AdminDashboardContentIndexRoute =
+  AdminDashboardContentIndexRouteImport.update({
+    id: '/content/',
+    path: '/content/',
+    getParentRoute: () => AdminDashboardRouteRoute,
+  } as any)
+const AdminDashboardGalleryIndexRoute =
+  AdminDashboardGalleryIndexRouteImport.update({
+    id: '/gallery/',
+    path: '/gallery/',
+    getParentRoute: () => AdminDashboardRouteRoute,
+  } as any)
+const AdminDashboardMediaIndexRoute =
+  AdminDashboardMediaIndexRouteImport.update({
+    id: '/media/',
+    path: '/media/',
+    getParentRoute: () => AdminDashboardRouteRoute,
+  } as any)
+const AdminDashboardMessagesIndexRoute =
+  AdminDashboardMessagesIndexRouteImport.update({
+    id: '/messages/',
+    path: '/messages/',
+    getParentRoute: () => AdminDashboardRouteRoute,
+  } as any)
+const AdminDashboardNewsletterIndexRoute =
+  AdminDashboardNewsletterIndexRouteImport.update({
+    id: '/newsletter/',
+    path: '/newsletter/',
+    getParentRoute: () => AdminDashboardRouteRoute,
+  } as any)
+const AdminDashboardProductsIndexRoute =
+  AdminDashboardProductsIndexRouteImport.update({
+    id: '/products/',
+    path: '/products/',
+    getParentRoute: () => AdminDashboardRouteRoute,
+  } as any)
+const AdminDashboardProductsProductIdRoute =
+  AdminDashboardProductsProductIdRouteImport.update({
+    id: '/products/$productId',
+    path: '/products/$productId',
     getParentRoute: () => AdminDashboardRouteRoute,
   } as any)
 const AdminDashboardProductsNewRoute =
@@ -105,10 +105,10 @@ const AdminDashboardProductsNewRoute =
     path: '/products/new',
     getParentRoute: () => AdminDashboardRouteRoute,
   } as any)
-const AdminDashboardProductsProductIdRoute =
-  AdminDashboardProductsProductIdRouteImport.update({
-    id: '/products/$productId',
-    path: '/products/$productId',
+const AdminDashboardSettingsIndexRoute =
+  AdminDashboardSettingsIndexRouteImport.update({
+    id: '/settings/',
+    path: '/settings/',
     getParentRoute: () => AdminDashboardRouteRoute,
   } as any)
 
@@ -231,18 +231,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/admin/login': {
-      id: '/admin/login'
-      path: '/admin/login'
-      fullPath: '/admin/login'
-      preLoaderRoute: typeof AdminLoginRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/admin/_dashboard': {
       id: '/admin/_dashboard'
       path: '/admin'
       fullPath: '/admin'
       preLoaderRoute: typeof AdminDashboardRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/login': {
+      id: '/admin/login'
+      path: '/admin/login'
+      fullPath: '/admin/login'
+      preLoaderRoute: typeof AdminLoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/_dashboard/': {
@@ -252,53 +252,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardIndexRouteImport
       parentRoute: typeof AdminDashboardRouteRoute
     }
-    '/admin/_dashboard/settings/': {
-      id: '/admin/_dashboard/settings/'
-      path: '/settings'
-      fullPath: '/admin/settings/'
-      preLoaderRoute: typeof AdminDashboardSettingsIndexRouteImport
-      parentRoute: typeof AdminDashboardRouteRoute
-    }
-    '/admin/_dashboard/products/': {
-      id: '/admin/_dashboard/products/'
-      path: '/products'
-      fullPath: '/admin/products/'
-      preLoaderRoute: typeof AdminDashboardProductsIndexRouteImport
-      parentRoute: typeof AdminDashboardRouteRoute
-    }
-    '/admin/_dashboard/newsletter/': {
-      id: '/admin/_dashboard/newsletter/'
-      path: '/newsletter'
-      fullPath: '/admin/newsletter/'
-      preLoaderRoute: typeof AdminDashboardNewsletterIndexRouteImport
-      parentRoute: typeof AdminDashboardRouteRoute
-    }
-    '/admin/_dashboard/messages/': {
-      id: '/admin/_dashboard/messages/'
-      path: '/messages'
-      fullPath: '/admin/messages/'
-      preLoaderRoute: typeof AdminDashboardMessagesIndexRouteImport
-      parentRoute: typeof AdminDashboardRouteRoute
-    }
-    '/admin/_dashboard/media/': {
-      id: '/admin/_dashboard/media/'
-      path: '/media'
-      fullPath: '/admin/media/'
-      preLoaderRoute: typeof AdminDashboardMediaIndexRouteImport
-      parentRoute: typeof AdminDashboardRouteRoute
-    }
-    '/admin/_dashboard/gallery/': {
-      id: '/admin/_dashboard/gallery/'
-      path: '/gallery'
-      fullPath: '/admin/gallery/'
-      preLoaderRoute: typeof AdminDashboardGalleryIndexRouteImport
-      parentRoute: typeof AdminDashboardRouteRoute
-    }
-    '/admin/_dashboard/content/': {
-      id: '/admin/_dashboard/content/'
-      path: '/content'
-      fullPath: '/admin/content/'
-      preLoaderRoute: typeof AdminDashboardContentIndexRouteImport
+    '/admin/_dashboard/analytics/': {
+      id: '/admin/_dashboard/analytics/'
+      path: '/analytics'
+      fullPath: '/admin/analytics/'
+      preLoaderRoute: typeof AdminDashboardAnalyticsIndexRouteImport
       parentRoute: typeof AdminDashboardRouteRoute
     }
     '/admin/_dashboard/collections/': {
@@ -308,11 +266,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardCollectionsIndexRouteImport
       parentRoute: typeof AdminDashboardRouteRoute
     }
-    '/admin/_dashboard/analytics/': {
-      id: '/admin/_dashboard/analytics/'
-      path: '/analytics'
-      fullPath: '/admin/analytics/'
-      preLoaderRoute: typeof AdminDashboardAnalyticsIndexRouteImport
+    '/admin/_dashboard/content/': {
+      id: '/admin/_dashboard/content/'
+      path: '/content'
+      fullPath: '/admin/content/'
+      preLoaderRoute: typeof AdminDashboardContentIndexRouteImport
+      parentRoute: typeof AdminDashboardRouteRoute
+    }
+    '/admin/_dashboard/gallery/': {
+      id: '/admin/_dashboard/gallery/'
+      path: '/gallery'
+      fullPath: '/admin/gallery/'
+      preLoaderRoute: typeof AdminDashboardGalleryIndexRouteImport
+      parentRoute: typeof AdminDashboardRouteRoute
+    }
+    '/admin/_dashboard/media/': {
+      id: '/admin/_dashboard/media/'
+      path: '/media'
+      fullPath: '/admin/media/'
+      preLoaderRoute: typeof AdminDashboardMediaIndexRouteImport
+      parentRoute: typeof AdminDashboardRouteRoute
+    }
+    '/admin/_dashboard/messages/': {
+      id: '/admin/_dashboard/messages/'
+      path: '/messages'
+      fullPath: '/admin/messages/'
+      preLoaderRoute: typeof AdminDashboardMessagesIndexRouteImport
+      parentRoute: typeof AdminDashboardRouteRoute
+    }
+    '/admin/_dashboard/newsletter/': {
+      id: '/admin/_dashboard/newsletter/'
+      path: '/newsletter'
+      fullPath: '/admin/newsletter/'
+      preLoaderRoute: typeof AdminDashboardNewsletterIndexRouteImport
+      parentRoute: typeof AdminDashboardRouteRoute
+    }
+    '/admin/_dashboard/products/': {
+      id: '/admin/_dashboard/products/'
+      path: '/products'
+      fullPath: '/admin/products/'
+      preLoaderRoute: typeof AdminDashboardProductsIndexRouteImport
+      parentRoute: typeof AdminDashboardRouteRoute
+    }
+    '/admin/_dashboard/products/$productId': {
+      id: '/admin/_dashboard/products/$productId'
+      path: '/products/$productId'
+      fullPath: '/admin/products/$productId'
+      preLoaderRoute: typeof AdminDashboardProductsProductIdRouteImport
       parentRoute: typeof AdminDashboardRouteRoute
     }
     '/admin/_dashboard/products/new': {
@@ -322,11 +322,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminDashboardProductsNewRouteImport
       parentRoute: typeof AdminDashboardRouteRoute
     }
-    '/admin/_dashboard/products/$productId': {
-      id: '/admin/_dashboard/products/$productId'
-      path: '/products/$productId'
-      fullPath: '/admin/products/$productId'
-      preLoaderRoute: typeof AdminDashboardProductsProductIdRouteImport
+    '/admin/_dashboard/settings/': {
+      id: '/admin/_dashboard/settings/'
+      path: '/settings'
+      fullPath: '/admin/settings/'
+      preLoaderRoute: typeof AdminDashboardSettingsIndexRouteImport
       parentRoute: typeof AdminDashboardRouteRoute
     }
   }
